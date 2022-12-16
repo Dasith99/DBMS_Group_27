@@ -1,4 +1,4 @@
-<!--chadmi 7-->
+<!--chadmi 7,8-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- font awesome link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+  
     <!-- css file link -->
     <link rel="stylesheet" href="../style.css">
 
@@ -47,9 +47,9 @@
             <div class="button text-center">
                 <button><a href="" class="nav-link text-light bg-info my-1">Insert Products</a></button>
                 <button><a href="" class="nav-link text-light bg-info my-1">View Products</a></button>
-                <button><a href="" class="nav-link text-light bg-info my-1">Insert Categories</a></button>
+                <button><a href="index.php?insert_category" class="nav-link text-light bg-info my-1">Insert Categories</a></button>
                 <button><a href="" class="nav-link text-light bg-info my-1">View Categories</a></button>
-                <button><a href="" class="nav-link text-light bg-info my-1">Insert Brands</a></button>
+                <button><a href="index.php?insert_brand" class="nav-link text-light bg-info my-1">Insert Brands</a></button>
                 <button><a href="" class="nav-link text-light bg-info my-1">View Brands</a></button>
                 <button><a href="" class="nav-link text-light bg-info my-1">All Orders</a></button>
                 <button><a href="" class="nav-link text-light bg-info my-1">All Payments</a></button>
@@ -58,6 +58,18 @@
             </div>
             </div>
         </div>
+        <!-- fourth child -->
+        <div class="container">
+            <?php
+                if(isset($_GET['insert_category'])){
+                    include("insertCategories.php");
+                }
+                if(isset($_GET['insert_brand'])){
+                    include("insertBrands.php");
+                }
+            ?>
+        </div>
+
     </div> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
